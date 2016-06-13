@@ -1,2 +1,5 @@
-FlexADGToHtmlExportUtil
-Util for export Flex AdvancedDataGrid to HTML table
+# FlexADGToHtmlExportUtil
+
+  Util for export Flex AdvancedDataGrid to HTML table
+  
+-------------------
