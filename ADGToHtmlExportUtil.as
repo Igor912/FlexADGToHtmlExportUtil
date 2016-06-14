@@ -16,12 +16,24 @@ package
 
 	import spark.utils.TextFlowUtil;
 
+	/**
+	 *
+	 * @author Ihor Khomiak
+	 */
 	public class ADGToHtmlExportUtil
 	{
 		public function ADGToHtmlExportUtil()
 		{
 		}
 
+		/**
+		 *
+		 * Generating html file and exporting AdvancedDataGrid data to html table.
+		 *
+		 * @param adg
+		 * @param fileName
+		 * @param encoding
+		 */
 		public function saveAdvancedDataGridAsHTMLFile( adg:AdvancedDataGrid, fileName:String, encoding:String = "utf-16" ):void
 		{
 			var htmlString:String = advancedDataGridToHTMLTable( adg );
@@ -42,6 +54,12 @@ package
 			fileReference = null;
 		}
 
+		/**
+		 *	Parsing and formating AdvancedDataGrid data.
+		 *
+		 * @param adg
+		 * @return htmlString:String
+		 */
 		public function advancedDataGridToHTMLTable( adg:AdvancedDataGrid ):String
 		{
 			//  ##_headerName## will be replaced by generated html header text
@@ -122,7 +140,7 @@ package
 			return htmlString;
 		}
 
-		public function formatRowString( items:Array ):String
+		private function formatRowString( items:Array ):String
 		{
 			var resultString:String = '<tr>';
 			for each ( var headerItem:String in items ) 
@@ -133,7 +151,7 @@ package
 			return resultString;
 		}
 
-		public function formatHeaderString( items:Array ):String
+		private function formatHeaderString( items:Array ):String
 		{
 			var resultString:String = '';
 			for each ( var headerItem:String in items ) 
